@@ -1,17 +1,17 @@
 package com.example.hs.model;
 
-import java.io.Serializable;
-
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.search.annotations.Indexed;
+
 @Entity
+@Indexed
 @Table(name = "division_text")
-public class DivisionText extends LocalizedText implements Serializable {
-	private static final long serialVersionUID = 2507550568508102524L;
+public class DivisionText extends LocalizedText {
 	private Division division;
 
 	@ManyToOne(fetch = FetchType.LAZY)

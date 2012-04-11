@@ -1,6 +1,5 @@
 package com.example.hs.model;
 
-import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,8 +14,7 @@ import javax.persistence.Transient;
 
 @Entity
 @Table(name = "division")
-public class Division extends TrackingPersistentObject implements Serializable {
-	private static final long serialVersionUID = 1440097325982894034L;
+public class Division extends TrackingPersistentObject {
 	private Map<Language, DivisionText> divisionTextMap = new HashMap<Language, DivisionText>();
 
 	public Division() {

@@ -5,6 +5,10 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.MappedSuperclass;
 
+import org.hibernate.search.annotations.Field;
+import org.hibernate.search.annotations.Indexed;
+
+@Indexed
 @MappedSuperclass
 public class LocalizedText extends PersistentObject {
 
@@ -21,6 +25,7 @@ public class LocalizedText extends PersistentObject {
 		this.language = language;
 	}
 
+	@Field
 	@Column(name = "text_value")
 	public String getTextValue() {
 		return textValue;

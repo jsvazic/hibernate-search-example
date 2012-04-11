@@ -7,14 +7,6 @@
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
         <class>com.example.hs.model.Division</class>
         <class>com.example.hs.model.DivisionText</class>
-        <class>com.example.hs.model.LocalizedText</class>
-        <class>com.example.hs.model.Inquiry</class>
-        <class>com.example.hs.model.InquiryContentText</class>
-        <class>com.example.hs.model.InquiryReasonText</class>
-        <class>com.example.hs.model.Subordinate</class>
-        <class>com.example.hs.model.SubordinateText</class>
-        <class>com.example.hs.model.Motif</class>
-        <class>com.example.hs.model.MotifText</class>
         
         <properties>
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
