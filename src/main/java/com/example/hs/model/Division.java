@@ -12,6 +12,11 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import org.hibernate.search.annotations.Field;
+import org.hibernate.search.annotations.FieldBridge;
+import org.hibernate.search.annotations.Indexed;
+
+@Indexed
 @Entity
 @Table(name = "division")
 public class Division extends TrackingPersistentObject {
@@ -24,6 +29,8 @@ public class Division extends TrackingPersistentObject {
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "division_id", referencedColumnName = "id")
 	@MapKey(name = "language")
+	@Field(name="name")
+	@FieldBridge(impl = com.example.hs.search.LanguageDivisionTextBridge.class)
 	protected Map<Language, DivisionText> getDivisionTextMap() {
 		return divisionTextMap;
 	}
