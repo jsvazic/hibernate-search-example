@@ -15,7 +15,6 @@ import javax.persistence.Transient;
 import org.hibernate.search.annotations.Field;
 import org.hibernate.search.annotations.FieldBridge;
 import org.hibernate.search.annotations.Indexed;
-import org.hibernate.search.annotations.IndexedEmbedded;
 
 @Indexed
 @Entity
