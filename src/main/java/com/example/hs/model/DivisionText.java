@@ -1,5 +1,6 @@
 package com.example.hs.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
@@ -14,7 +15,7 @@ import org.hibernate.search.annotations.Indexed;
 public class DivisionText extends LocalizedText {
 	private Division division;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name = "division_id", nullable = false)
 	public Division getDivision() {
 		return division;
